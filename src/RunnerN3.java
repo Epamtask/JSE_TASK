@@ -28,7 +28,7 @@ public class RunnerN3 {
 
 		ReadData data = null;	
 		ConnectionMySql connection = null;
-		final String IN = "src/in_1_20.csv";
+		final String IN = "src/results.csv";
 		try {
 
 			DataBaseProperties properties = new DataBaseProperties(User.URL, User.LOGIN, User.PASSWORD,User.DB_NAME, IN, mark);

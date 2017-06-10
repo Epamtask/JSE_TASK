@@ -27,10 +27,10 @@ public class RunnerN1 {
 
 		ReadData data = null;		
 		ConnectionMySql connection = null;
-		final String IN = "src/in1_10.csv";
+		final String IN = "src/results.csv";
 		try {
 
-			DataBaseProperties properties = new DataBaseProperties(User.URL, User.LOGIN, User.PASSWORD,User.DB_NAME, IN, mark);
+			DataBaseProperties properties = new DataBaseProperties(User.URL, User.LOGIN, User.PASSWORD, User.DB_NAME, IN, mark);
 			data = Reader.read(properties);
 			connection = ConnectionMySql.creatConnection(properties);
 			

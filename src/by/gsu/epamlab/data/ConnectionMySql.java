@@ -14,16 +14,15 @@ public class ConnectionMySql {
 
 	public static ConnectionMySql creatConnection(DataBaseProperties properties)
 			throws SQLException, ClassNotFoundException {
-		if (cnMySql.connection == null) {
-			
+		if (cnMySql.connection == null) {			
 			// not necessary
-			if (!loadDriver) {
+			if (!loadDriver) {				
 				Class.forName("org.gjt.mm.mysql.Driver");
-				loadDriver=true;
+				loadDriver = true;
 			}
+			
 			cnMySql.connection = DriverManager.getConnection("jdbc:mysql://" + properties.getUrl(),
-					properties.getLogin(), properties.getPassword());
-
+					properties.getLogin(), properties.getPassword());			
 		}
 		return cnMySql;
 	}

@@ -5,7 +5,7 @@ import by.gsu.epamlab.beans.AbstractMark;
 
 public class DataBaseProperties {
 
-	public DataBaseProperties(String url, String login, String password, String dbName,String source, AbstractMark markType) {
+	public DataBaseProperties(String url, String login, String password, String dbName, String source, AbstractMark markType) {
 		super();
 		this.url = url;
 		this.login = login;
