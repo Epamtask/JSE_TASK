@@ -1,6 +1,5 @@
 package by.gsu.epamlab.data;
 
-import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
@@ -9,6 +8,7 @@ public class ConnectionMySql {
 	private java.sql.Connection connection;
 	private final static ConnectionMySql cnMySql = new ConnectionMySql();
 	private static boolean loadDriver = false;
+	public static final String driver = "org.gjt.mm.mysql.Driver";
 	private ConnectionMySql() {
 		super();
 	}
@@ -18,11 +18,11 @@ public class ConnectionMySql {
 		if (cnMySql.connection == null) {			
 			// not necessary
 			if (!loadDriver) {				
-				Class.forName("org.gjt.mm.mysql.Driver");
+				Class.forName(driver);
 				loadDriver = true;
 			}
 			
-			cnMySql.connection = DriverManager.getConnection("jdbc:mysql://" + properties.getUrl(),
+			cnMySql.connection = DriverManager.getConnection(properties.getUrl(),
 					properties.getLogin(), properties.getPassword());			
 		}
 		return cnMySql;

@@ -23,7 +23,6 @@ public class XmlReader extends DefaultHandler implements ReadData {
 		XMLReader reader = XMLReaderFactory.createXMLReader();
 		reader.setContentHandler(this);
 		reader.parse(xmlName);
-
 	}
 
 	private static enum ResultEnum {
