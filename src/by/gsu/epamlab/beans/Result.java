@@ -16,13 +16,12 @@ public class Result {
 		this.login = login;
 		this.test = test;
 		this.date = java.sql.Date.valueOf(date);
-		this.markType=markHandler;
+		this.markType = markHandler;
 		this.mark = markHandler.getMark(mark);
 
 	}
 
-	public Result() {
-		// TODO Auto-generated constructor stub
+	public Result() {		
 		super();
 	}
 
@@ -100,8 +99,7 @@ public class Result {
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
-	public String toString() {
-		
+	public String toString() {		
 		return login + ";" + test + ";" + OUTPUT_DATE_FORMAT.format(date) + ";" + markType.markToString(mark);
 	}
 

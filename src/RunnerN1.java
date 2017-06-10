@@ -22,7 +22,7 @@ import by.gsu.epamlab.readers.Reader;
 public class RunnerN1 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 		AbstractMark mark=new Mark(1, 10);
 
 		ReadData data = null;		
@@ -47,14 +47,12 @@ public class RunnerN1 {
 			resultsLatestDay(listResults,Title.LATEST);
 
 		} catch (SQLException e) {
-
 			System.err.println(Errors.BD_ERROR+e.getMessage());
 		} catch (IOException e) {
 			System.err.println(e.getMessage());
 		} catch (SAXException e) {
 			System.err.println(e.getMessage());
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			System.err.println(e.getMessage()+Errors.CLASS_NOT_FOUND);
 		} finally {
 			if (connection != null) {

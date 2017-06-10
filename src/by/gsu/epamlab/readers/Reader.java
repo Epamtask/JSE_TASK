@@ -13,31 +13,28 @@ public class Reader {
 	}
 	
 	static private String getTypeSource(String str) {
-		final int afterPoint=1;
+		final int afterPoint = 1;
 
-		return str.substring(str.lastIndexOf('.')+afterPoint, str.length());
+		return str.substring(str.lastIndexOf('.') + afterPoint, str.length());
 	}
 
 	static public ReadData read(DataBaseProperties prop) throws SAXException, IOException {
 		Source source = null;
 		try{
 		 source = Source.valueOf(getTypeSource(prop.getSource()).toUpperCase());
-		} catch(IllegalArgumentException e){
-			throw new IOException(Errors.WRONG_DATA+ prop.getSource());
-			
+		} catch(IllegalArgumentException e) {
+			throw new IOException(Errors.WRONG_DATA + prop.getSource());			
 		}
 		ReadData reader = null;
 		switch (source) {
-
 		case XML: {
-			reader = new XmlReader(prop.getSource(),prop.getMarkType());
+			reader = new XmlReader(prop.getSource(), prop.getMarkType());
 		}
 			break;
 		case CSV: {
-			reader = new CsvReader(prop.getSource(),prop.getMarkType());
+			reader = new CsvReader(prop.getSource(), prop.getMarkType());
 		}
 			break;
-
 		}
 		return reader;
 	}

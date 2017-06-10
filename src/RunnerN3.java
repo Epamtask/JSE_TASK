@@ -23,7 +23,7 @@ import by.gsu.epamlab.readers.Reader;
 
 public class RunnerN3 {
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 		AbstractMark mark=new HalfMark(0, 20);
 
 		ReadData data = null;	
@@ -54,7 +54,6 @@ public class RunnerN3 {
 		} catch (SAXException e) {
 			System.err.println(e.getMessage());
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			System.err.println(e.getMessage()+Errors.CLASS_NOT_FOUND);
 		} finally {
 			if (connection != null) {

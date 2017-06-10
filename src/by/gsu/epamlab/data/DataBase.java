@@ -26,7 +26,7 @@ public class DataBase {
 		defaultDbName = true;
 	}
 
-	private void ResultSetClose(ResultSet... rs) {
+	private void closeResultSets(ResultSet... rs) {
 		for (ResultSet resultSet : rs) {
 			if (resultSet != null) {
 				try {
@@ -39,7 +39,7 @@ public class DataBase {
 		}
 	}
 
-	private void StatementClose(Statement... stm) {
+	private void closeStatements(Statement... stm) {
 		for (Statement statement : stm) {
 			if (statement != null) {
 				try {
@@ -52,7 +52,7 @@ public class DataBase {
 		}
 	}
 
-	private void preparedStmClose(PreparedStatement... pStm) {
+	private void closePreparedStatements(PreparedStatement... pStm) {
 		for (PreparedStatement preparedStm : pStm) {
 			if (preparedStm != null) {
 				try {
@@ -66,7 +66,6 @@ public class DataBase {
 	}
 
 	public enum Logins {
-
 		TABLE(".logins", 0), ID("idLogin", 1), NAME("name", 2);
 		private Logins(String colName, int colIndex) {
 			this.name = colName;
@@ -83,13 +82,11 @@ public class DataBase {
 	}
 
 	public enum Tests {
-
 		TABLE(".tests", 0), ID("idTest", 1), NAME("name", 2);
 		private Tests(String colName, int colIndex) {
 			this.name = colName;
 			this.index = colIndex;
 		}
-
 		private String name;
 		private int index;
 
@@ -143,8 +140,8 @@ public class DataBase {
 			}
 
 		} finally {
-			ResultSetClose(rsResults);
-			StatementClose(stmResults);
+			closeResultSets(rsResults);
+			closeStatements(stmResults);
 		}
 	}
 
@@ -171,8 +168,8 @@ public class DataBase {
 			}
 
 		} finally {
-			ResultSetClose(rsResult);
-			StatementClose(stmResult);
+			closeResultSets(rsResult);
+			closeStatements(stmResult);
 		}
 		return meanValue;
 	}
@@ -190,8 +187,8 @@ public class DataBase {
 				max = rsDate.getInt("maxMonth");
 			}
 		} finally {
-			ResultSetClose(rsDate);
-			StatementClose(stDate);
+			closeResultSets(rsDate);
+			closeStatements(stDate);
 		}
 		return max;
 	}
@@ -238,7 +235,7 @@ public class DataBase {
 			stmt.executeUpdate(createResults);
 
 		} finally {
-			StatementClose(stmt);
+			closeStatements(stmt);
 		}
 	}
 

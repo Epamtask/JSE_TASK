@@ -1,5 +1,6 @@
 package by.gsu.epamlab.data;
 
+import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
@@ -28,7 +29,6 @@ public class ConnectionMySql {
 	}
 
 	public void closeConnection() {
-
 		if (connection != null) {
 			try {
 				connection.close();
@@ -36,7 +36,7 @@ public class ConnectionMySql {
 				System.err.println(e.getMessage());
 			}
 		}
-		connection = null;
+		connection = null;	
 	}
 
 	/**

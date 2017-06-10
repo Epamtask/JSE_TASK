@@ -3,8 +3,7 @@ package by.gsu.epamlab.beans;
 public class HalfMark extends AbstractMark {
 
 	public HalfMark(int minValue, int maxValue) {
-		super(minValue, maxValue);
-		// TODO Auto-generated constructor stub
+		super(minValue, maxValue);		
 	}
 
 	private static final int MULTIPLIER = 2;
@@ -20,9 +19,7 @@ public class HalfMark extends AbstractMark {
 	}
 
 	@Override
-	public String markToString(int mark) {
-		// TODO Auto-generated method stub
-
+	public String markToString(int mark) {	
 		String result = String.valueOf(mark / 2);
 		if (mark % 2 == 1) {
 			result += REMAINDER;
@@ -31,8 +28,7 @@ public class HalfMark extends AbstractMark {
 	}
 
 	@Override
-	public int getMultiplier() {
-		// TODO Auto-generated method stub
+	public int getMultiplier() {		
 		return MULTIPLIER;
 	}
 }

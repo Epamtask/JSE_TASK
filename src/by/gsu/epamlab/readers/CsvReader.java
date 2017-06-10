@@ -13,7 +13,7 @@ public class CsvReader implements ReadData {
 
 	public CsvReader(String input, AbstractMark mark) throws FileNotFoundException {
 		super();
-		this.mark=mark;
+		this.mark = mark;
 		scr = new Scanner(new FileReader(input));
 		if (scr.hasNext()) {
 			csvResult = nextCsv();		
@@ -32,7 +32,7 @@ public class CsvReader implements ReadData {
 	@Override
 	public Result next() {
 		Result temp = csvResult;
-		csvResult=nextCsv();
+		csvResult = nextCsv();
 		return temp;
 	}
 
@@ -42,8 +42,7 @@ public class CsvReader implements ReadData {
 			String csv = scr.next();
 			String[] values = csv.split(SEPARATOR);
 			try {
-				resultNext = new Result(values[LOGIN], values[TEST], values[DATE], values[MARK],mark);
-
+				resultNext = new Result(values[LOGIN], values[TEST], values[DATE], values[MARK], mark);
 			} catch (InvalidParameterException e) {
 				System.err.println(e.getMessage() + " " + csv);
 				if (scr.hasNext())
@@ -55,10 +54,8 @@ public class CsvReader implements ReadData {
 	}
 
 	@Override
-	public boolean hasNext() {
-		// TODO Auto-generated method stub		
-		return  csvResult!=null;
-		
+	public boolean hasNext() {		
+		return  csvResult != null;		
 	}
 
 	@Override

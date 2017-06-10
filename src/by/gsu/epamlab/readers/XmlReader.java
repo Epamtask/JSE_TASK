@@ -19,7 +19,7 @@ public class XmlReader extends DefaultHandler implements ReadData {
 
 	public XmlReader(String xmlName, AbstractMark mark) throws SAXException, IOException {
 		super();
-		this.mark=mark;
+		this.mark = mark;
 		XMLReader reader = XMLReaderFactory.createXMLReader();
 		reader.setContentHandler(this);
 		reader.parse(xmlName);
@@ -50,7 +50,6 @@ public class XmlReader extends DefaultHandler implements ReadData {
 						+ attrs.getValue(MARK_INDEX));
 			}
 		}
-
 	}
 
 	public void characters(char[] ch, int start, int length) {
@@ -63,21 +62,17 @@ public class XmlReader extends DefaultHandler implements ReadData {
 	}
 
 	@Override
-	public Result next() {
-		// TODO Auto-generated method stub
+	public Result next() {		
 		return results.poll();
 	}
 
 	@Override
-	public boolean hasNext() {
-		// TODO Auto-generated method stub
+	public boolean hasNext() {		
 		return !results.isEmpty();
 	}
 
 	@Override
-	public void close() {
-		// TODO Auto-generated method stub
-		
+	public void close() {			
 
 	}
 }

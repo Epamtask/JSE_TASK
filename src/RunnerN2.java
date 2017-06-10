@@ -55,7 +55,6 @@ public class RunnerN2 {
 		} catch (SAXException e) {
 			System.err.println(e.getMessage());
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			System.err.println(e.getMessage() + Errors.CLASS_NOT_FOUND);
 		} finally {
 			if (connection != null) {

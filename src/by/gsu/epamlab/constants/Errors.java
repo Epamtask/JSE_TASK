@@ -7,6 +7,5 @@ public class Errors {
 	public static final String EROR_STEP = "Wrong step for the interval: ";
 	public static final String UNDER_LINE = "_";
 	public static final String BD_ERROR="Data Base Error : ";
-
-
+	
 }

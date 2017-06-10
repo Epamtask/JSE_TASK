@@ -25,7 +25,6 @@ public class Print {
 			System.out.println(result);
 
 			while (iter.hasPrevious()) {
-
 				result = iter.previous();
 				if (date.equals(result.getDate())) {
 					System.out.println(result);
